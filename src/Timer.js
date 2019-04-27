@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import TotalTime from './TotalTime';
+
 
 class Timer extends Component {
     constructor(props) {
@@ -9,10 +11,16 @@ class Timer extends Component {
     }
     render() {
         return (
-        <div>
-            
-        </div>
+        <>
+            <TotalTime input={this.state.input} handleType={this._handleType} />
+        </>
         )
+    }
+    _handleType = (input) => {
+        this.setState({
+            input,
+            time: input ? input : 0
+        })
     }
 }
 
