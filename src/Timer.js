@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TotalTime from './TotalTime';
+import TimeRemaining from './TimeRemaining';
 
 
 class Timer extends Component {
@@ -12,6 +13,7 @@ class Timer extends Component {
     render() {
         return (
         <>
+            <TimeRemaining time={this.state.time} completion={this.state.completion} />        
             <TotalTime input={this.state.input} handleType={this._handleType} />
         </>
         )
