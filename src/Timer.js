@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TotalTime from './TotalTime';
 import TimeRemaining from './TimeRemaining';
 import TimerButton from './TimerButton';
+import ResetButton from './ResetButton';
 
 
 class Timer extends Component {
@@ -17,6 +18,7 @@ class Timer extends Component {
             <TimeRemaining time={this.state.time} completion={this.state.completion} />        
             <TotalTime input={this.state.input} handleType={this._handleType} />
             <TimerButton handleClick={this._timerClick} status={this.state.status} />
+            <ResetButton handleClick={this._resetClick} />
         </>
         )
     }
@@ -52,6 +54,14 @@ class Timer extends Component {
                 }
             })
         }
+    }
+    _resetClick = () => {
+        clearInterval(this.interval)
+        this.setState({
+            status: false,
+            time: this.state.input,
+            completion: false
+        })
     }
 }
 
