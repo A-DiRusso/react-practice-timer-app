@@ -9,7 +9,11 @@ class Timer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            time: props.time,
+            input: 0,
+            status: false,
+            completion: false,
+            adder: []
         }
     }
     render() {
