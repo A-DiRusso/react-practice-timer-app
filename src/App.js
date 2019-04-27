@@ -7,7 +7,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      time: 0,
+      input: 0,
+      status: false,
+      completion: false,
+      adder: []
     }
   }
   
@@ -16,7 +20,13 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <Timer />
+          <Timer time={this.state.time} />
+          {this.state.adder.map((one, i) => {
+            return (
+              <Timer time={this.state.time} key={i} />
+            )
+          })}
+        
         </header>
       </div>
     );
