@@ -26,10 +26,17 @@ class App extends React.Component {
               <Timer time={this.state.time} key={i} />
             )
           })}
-        
+          <br></br>
+          <button onClick={this._addTimer}>Add Timer</button>
         </header>
       </div>
     );
+  }
+  _addTimer = () => {
+    this.addOne = 1
+    this.setState({
+      adder: this.state.adder.concat(this.addOne)
+    })
   }
 }
 
